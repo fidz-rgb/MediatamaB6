@@ -1,0 +1,53 @@
+WEBSITE E-Commerce
+
+Akses:
+-Administrator
+-Alumni (seller)
+-Customer
+
+DB =dbecomm
+=Tabel Users:
+-user_id (Primary Key)
+-username
+-password (hashed)
+-email
+-full_name
+-address
+-phone_number
+-created_at
+
+=Tabel Products:
+-product_id (Primary Key)
+-name
+-description
+-price
+-stock_quantity
+-category_id (Foreign Key ke Categories)
+-image_url
+-created_at
+
+=Tabel Categories:
+-category_id (Primary Key)
+-name
+-description
+
+=Tabel Orders:
+-order_id (Primary Key)
+-user_id (Foreign Key ke Users)
+-total_amount
+-order_status
+-created_at
+
+=Tabel Order_Items:
+-order_item_id (Primary Key)
+-order_id (Foreign Key ke Orders)
+-product_id (Foreign Key ke Products)
+-quantity
+-price
+
+=Tabel Cart:(opsional)
+-cart_id (Primary Key)
+-user_id (Foreign Key ke Users)
+-product_id (Foreign Key ke Products)
+-quantity
+-created_at
