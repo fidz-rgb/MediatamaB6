@@ -17,11 +17,21 @@
             <!-- pilihan -->
             <div class="container text-center mb-3" role="tablist">
                 <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-primary px-5" id="tab-alumni" style="background-color:#B0B435; border:none;"><a href="#alumniReg" style="text-decoration: none; color:white;">Alumni</a></button>
+                    <div class="col nav-item" role="presentation">
+                        <a class="nav-link active" id="tab-alum" data-bs-toggle="pill" href="#pills-alumni" role="tab"
+                            aria-controls="pills-alumni" aria-selected="true">
+                            <button type="button" class="btn btn-primary w-100" style="background-color: #B0B435; border:none;">
+                                Alumni
+                            </button>
+                        </a>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-primary px-5" id="tab-umum" style="background-color:#B0B435; border:none;"><a href="#umumReg" style="text-decoration: none; color:white;">Umum</a></button>
+                    <div class="col nav-item" role="presentation">
+                        <a class="nav-link" id="tab-umum" data-bs-toggle="pill" href="#pills-umum" role="tab"
+                            aria-controls="pills-umum" aria-selected="false">
+                            <button type="button" class="btn btn-primary w-100" style="background-color: #B0B435; border:none;">
+                                Umum
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -29,7 +39,7 @@
 
             <!--  -->
             <div class="tab-content">
-                <div class="tab-pane fade show active" id="alumniReg" role="tabpanel" aria-labelledby="tab-login">
+                <div class="tab-pane fade show active" id="pills-alumni" role="tabpanel" aria-labelledby="tab-login">
                     <div class="mb-3">
                         <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="nama">
                     </div>
@@ -50,7 +60,8 @@
                         <button type="submit" class="btn btn-primary" style="background-color:#B0B435; border:none;">sign in</button>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="umumReg" role="tabpanel" aria-labelledby="tab-login">
+
+                <div class="tab-pane fade" id="pills-umum" role="tabpanel" aria-labelledby="tab-register">
                     <div class="mb-3">
                         <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="nama">
                     </div>
@@ -65,6 +76,8 @@
                     </div>
                 </div>
             </div>
+
+
 
         </form>
     </div>
