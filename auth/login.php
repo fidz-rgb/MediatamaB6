@@ -11,7 +11,7 @@
 <body class="bg bg-secondary" style="background-image: url('../components/images/bgwall.jpg'); background-size: cover;">
     <div class="container bg-light" style="width: 400px; border-radius:10px;">
         <form action="prosLogin.php" method="post" enctype="multipart/form-data" class="mx-auto my-5 p-3 ">
-            <div >
+            <div>
                 <h2 style="text-align: center; font-weight:bold; margin-bottom:30px;">LOGIN</h2>
             </div>
             <div class="mb-3">
@@ -21,8 +21,10 @@
                 <input type="password" class="form-control border border-dark-subtle border-2" id="exampleInputPassword1" placeholder="Password" name="password">
             </div>
             <div class="d-flex">
-                <button type="submit" class="btn btn-primary" style="background-color:#B0B435; border:none;">sign in</button>
-                <p class="ms-auto" style="margin:5px;">Don't have an account? <a href="register.php" style=" text-decoration: none; color:blue;">Register here</a></p>
+                <button type="submit" class="btn btn-primary mx-auto mb-5" style="background-color:#B0B435; border:none;">sign in</button>   
+            </div>
+            <div class="d-flex">
+                <p class="m-auto" style="margin:5px;">Don't have an account? <a href="register.php" style=" text-decoration: none; color:blue;">Register here</a></p>
             </div>
         </form>
     </div>

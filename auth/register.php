@@ -1,4 +1,5 @@
 <?php include "../utility/conn.php" ?>
+<?php include "../components/header.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +11,14 @@
 </head>
 
 <body class="bg bg-secondary" style="background-image: url('../components/images/bgwall.jpg'); background-size: cover;">
-    <div class="container bg-light" style="width: 400px; border-radius:10px;">
+    <div class="container bg-light" style="width: 400px; border-radius:10px; ">
         <form action="prosRegister.php" method="post" enctype="multipart/form-data" class="mx-auto my-5 p-3">
             <h2 style="text-align: center; font-weight:bold; margin-bottom:30px;">REGISTER</h2>
 
             <!-- pilihan -->
             <div class="container text-center mb-3" role="tablist">
                 <div class="row">
-                    <div class="col nav-item" role="presentation">
+                    <div class="col" role="presentation">
                         <a class="nav-link active" id="tab-alum" data-bs-toggle="pill" href="#pills-alumni" role="tab"
                             aria-controls="pills-alumni" aria-selected="true">
                             <button type="button" class="btn btn-primary w-100" style="background-color: #B0B435; border:none;">
@@ -25,7 +26,7 @@
                             </button>
                         </a>
                     </div>
-                    <div class="col nav-item" role="presentation">
+                    <div class="col" role="presentation">
                         <a class="nav-link" id="tab-umum" data-bs-toggle="pill" href="#pills-umum" role="tab"
                             aria-controls="pills-umum" aria-selected="false">
                             <button type="button" class="btn btn-primary w-100" style="background-color: #B0B435; border:none;">
@@ -40,6 +41,20 @@
             <!--  -->
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="pills-alumni" role="tabpanel" aria-labelledby="tab-login">
+                    <div class="text-center mb-3">
+                        <p>Sign in with:</p>
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-google"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
                     <div class="mb-3">
                         <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="nama">
                     </div>
@@ -62,6 +77,20 @@
                 </div>
 
                 <div class="tab-pane fade" id="pills-umum" role="tabpanel" aria-labelledby="tab-register">
+                    <div class="text-center mb-3">
+                        <p>Sign in with:</p>
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-google"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
                     <div class="mb-3">
                         <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="nama">
                     </div>

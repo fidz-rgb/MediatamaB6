@@ -2,18 +2,24 @@
 <div class="main-top">
     <div class="container-fluid">
         <div class="row">
-            <!-- Kolom kiri -->
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
-            <div class="login-box">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="right-phone-box">
+                    <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                </div>
+                <div class="our-link">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="login-box">
                     <select id="basic" onchange="navigate()" class="selectpicker show-tick form-control" data-placeholder="Sign In">
                         <option value="../auth/register.php">Register Here</option>
                         <option value="../auth/login.php">Sign In</option>
                     </select>
                 </div>
-            </div>
-            <!-- Kolom kanan -->
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-end">
-                <div class="text-slid-box ml-3">
+                <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">
                         <ul class="offer-box">
                             <li>
@@ -47,7 +53,6 @@
         </div>
     </div>
 </div>
-
 <!-- End Main Top -->
 
 <!-- Start Main Top -->
@@ -67,7 +72,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="nav-link" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
@@ -79,8 +84,9 @@
                             <li><a href="wishlist.php">Wishlist</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -100,25 +106,24 @@
             </div>
             <!-- End Atribute Navigation -->
         </div>
-
-        <!-- Start Side menu -->
-        <div class="side" id="side-menu">
+        <!-- Start Side Menu -->
+        <div class="side">
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
             <li class="cart-box">
                 <ul class="cart-list">
                     <li>
-                        <a href="#" class="photo"><img src="../components/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">test1</a></h6>
+                        <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Delica omtantur </a></h6>
                         <p>1x - <span class="price">$80.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="../components/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">test2</a></h6>
+                        <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Omnes ocurreret</a></h6>
                         <p>1x - <span class="price">$60.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="../components/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">test3</a></h6>
+                        <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Agam facilisis</a></h6>
                         <p>1x - <span class="price">$40.00</span></p>
                     </li>
                     <li class="total">
@@ -128,7 +133,7 @@
                 </ul>
             </li>
         </div>
-        <!-- End Side menu -->
+        <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
 </header>

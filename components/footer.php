@@ -6,47 +6,34 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
                         <h3>Business Time</h3>
-                        <ul class="list-time">
-                            <li>Monday - Friday: 08.00am to 05.00pm</li>
-                            <li>Saturday: 10.00am to 08.00pm</li>
-                            <li>Sunday: <span>Closed</span></li>
-                        </ul>
+                        <p>
+                            Monday - Friday: 08.00am to 05.00pm <br>
+                            Saturday: 10.00am to 08.00pm <br>
+                            Sunday: <span>Closed</span> <br>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
                         <h3>Social Media</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <ul>
-                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                        </ul>
+                        <a href="#" class="me-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+                        <a href="#" class="me-2"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
                         <h3>Contact Us</h3>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> Address: Jl. Dr. Sutomo No. 151 B, Kota Padang Sumatera Barat, Indonesia</li>
-                            <li><i class="fas fa-phone-square"></i> Phone: +62-895-4024-68145</li>
-                            <li><i class="fas fa-envelope"></i> Email: rahmadalhafidz232@gmail.com</li>
-                        </ul>
-                        <!-- <ul>
-                            <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
-                            </li>
-                            <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                            </li>
-                            <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
-                            </li>
-                        </ul> -->
+                        <div style="color: white;">
+                            <p class="mb-auto"><i class="fas fa-map-marker-alt"></i> Address: Jl. Dr. Sutomo No. 151 B, <br>Kota Padang Sumatera Barat, Indonesia</p>
+                            <p class="mb-auto"><i class="fas fa-phone-square"></i> Phone: +62-895-4024-68145</p>
+                            <p class="mb-auto"><i class="fas fa-envelope"></i> Email: rahmadalhafidz232@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
