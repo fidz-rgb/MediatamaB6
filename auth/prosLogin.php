@@ -1,25 +1,66 @@
-<?php
+<?php 
+session_start();
 include "../utility/conn.php";
 
 $user = $_POST['username'];
 $pass = $_POST['password'];
-// var_dump($_POST);
-// exit(); //cara cek apakah sebuah proses berhasil mengambil nilai atau tidak
-mysqli_query($connect, "SELECT * FROM users WHERE username = '$user' AND pwd = '$pass' ");
-if(mysqli_affected_rows($connect) > 0)
-{
-    session_start();
-    $_SESSION['islogin'] = true;
-    $_SESSION['username'] = $user;
-    echo "<script>
-    alert('Login berhasil')
-    window.location.href='testlogin.php'
-    </script>";
+
+// Query hanya untuk mengambil data pengguna berdasarkan username
+$login = mysqli_query($connect, "SELECT * FROM users WHERE username = '$user'");
+$cek = mysqli_num_rows($login);
+
+if ($cek > 0) {
+    $data = mysqli_fetch_assoc($login);
+
+    // Verifikasi password input dengan hash yang ada di database
+    if (password_verify($pass, $data['pwd'])) {
+        // Jika password benar, set session dan arahkan berdasarkan role
+        $_SESSION['username'] = $user;
+        $_SESSION['role'] = $data['role'];
+
+        if ($data['role'] === "admin") {
+            echo "<script>
+            alert('Login berhasil sebagai ADMIN');
+            window.location.href='../home/index.php';
+            </script>";
+        } else if ($data['role'] === "alumni") {
+            // Cek apakah alumni sudah disetujui oleh admin
+            if ($data['is_approved'] == 1) {
+                echo "<script>
+                alert('Login berhasil sebagai ALUMNI');
+                window.location.href='../home/index.php';
+                </script>";
+            } else {
+                // Jika alumni belum disetujui, tampilkan pesan
+                echo "<script>
+                alert('Akun Anda belum disetujui oleh admin. Harap tunggu persetujuan.');
+                window.location.href='login.php';
+                </script>";
+            }
+        } else if ($data['role'] === "user") {
+            echo "<script>
+            alert('Login berhasil sebagai USER');
+            window.location.href='../home/index.php';
+            </script>";
+        } else {
+            echo "<script>
+            alert('Login gagal / role tidak ditemukan!');
+            window.location.href='login.php';
+            </script>";
+        }
+    } else {
+        // Jika password salah, tampilkan pesan kesalahan
+        echo "<script>
+        alert('Password salah!');
+        window.location.href='login.php';
+        </script>";
+    }
 } else {
+    // Jika username tidak ditemukan
     echo "<script>
-    alert('Login gagal/user tidak ada!')
-    window.location.href='login.php'
+    alert('Login gagal / username tidak ditemukan!');
+    window.location.href='login.php';
     </script>";
 }
-
 ?>
+

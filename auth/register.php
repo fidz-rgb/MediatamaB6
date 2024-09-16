@@ -1,5 +1,3 @@
-<?php include "../utility/conn.php" ?>
-<?php include "../components/header.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,102 +9,48 @@
 </head>
 
 <body class="bg bg-secondary" style="background-image: url('../components/images/bgwall.jpg'); background-size: cover;">
-    <div class="container bg-light" style="width: 400px; border-radius:10px; ">
+    <div class="container bg-light" style="width: 500px; border-radius:10px; ">
         <form action="prosRegister.php" method="post" enctype="multipart/form-data" class="mx-auto my-5 p-3">
             <h2 style="text-align: center; font-weight:bold; margin-bottom:30px;">REGISTER</h2>
-
-            <!-- pilihan -->
-            <div class="container text-center mb-3" role="tablist">
+            <div class="row">
+                <div class="col mb-3">
+                    <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="fullname" required>
+                </div>
+                <div class="col mb-3">
+                    <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Kontak" name="kontak" required>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control border border-dark-subtle border-2" name="alamat" id="floatingTextarea2" style="height: 100px" required></textarea>
+                <label for="floatingTextarea2">Alamat</label>
+            </div>
+            <div class="flex-column">
+                <div class="w-3 mb-3">
+                    <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Username" name="username" required>
+                </div>
+                <div class="ms-auto mb-3">
+                    <input type="email" class="form-control border border-dark-subtle border-2" id="" placeholder="Email" name="email" required>
+                </div>
                 <div class="row">
-                    <div class="col" role="presentation">
-                        <a class="nav-link active" id="tab-alum" data-bs-toggle="pill" href="#pills-alumni" role="tab"
-                            aria-controls="pills-alumni" aria-selected="true">
-                            <button type="button" class="btn btn-primary w-100" style="background-color: #B0B435; border:none;">
-                                Alumni
-                            </button>
-                        </a>
+                    <div class="col mb-3">
+                        <select class="form-select border border-dark-subtle border-2" aria-label="Default select example" name="role" required>
+                            <option selected hidden>Select role :</option>
+                            <option value="admin" hidden>Admin</option>
+                            <option value="alumni">Alumni</option>
+                            <option value="user">Umum</option>
+                        </select>
                     </div>
-                    <div class="col" role="presentation">
-                        <a class="nav-link" id="tab-umum" data-bs-toggle="pill" href="#pills-umum" role="tab"
-                            aria-controls="pills-umum" aria-selected="false">
-                            <button type="button" class="btn btn-primary w-100" style="background-color: #B0B435; border:none;">
-                                Umum
-                            </button>
-                        </a>
+                    <div class="col mb-3">
+                        <input type="password" class="form-control border border-dark-subtle border-2" id="exampleInputPassword1" placeholder="Password" name="password" required>
                     </div>
-                </div>
-            </div>
-            <!-- end -->
-
-            <!--  -->
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="pills-alumni" role="tabpanel" aria-labelledby="tab-login">
-                    <div class="text-center mb-3">
-                        <p>Sign in with:</p>
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fa-brands fa-facebook"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-google"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-github"></i>
-                        </button>
+                    <div class="d-flex">
+                        <button type="submit" class="btn btn-primary mx-auto mb-3" style="background-color:#B0B435; border:none;">sign in</button>
                     </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="nama">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Username" name="username">
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control border border-dark-subtle border-2" id="exampleInputPassword1" placeholder="Password" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Kontak" name="kontak">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Alamat" name="alamat">
-                    </div>
-
-                    <div>
-                        <button type="submit" class="btn btn-primary" style="background-color:#B0B435; border:none;">sign in</button>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="pills-umum" role="tabpanel" aria-labelledby="tab-register">
-                    <div class="text-center mb-3">
-                        <p>Sign in with:</p>
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fa-brands fa-facebook"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-google"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-github"></i>
-                        </button>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Nama Lengkap" name="nama">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control border border-dark-subtle border-2" id="" placeholder="Username" name="username">
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control border border-dark-subtle border-2" id="exampleInputPassword1" placeholder="Password" name="password">
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary" style="background-color:#B0B435; border:none;">sign in</button>
+                    <div class="d-flex">
+                        <p class="m-auto">Already have an account? <a href="login.php" style=" text-decoration: none; color:blue;">Login here</a></p>
                     </div>
                 </div>
             </div>
-
-
 
         </form>
     </div>

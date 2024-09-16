@@ -1,13 +1,38 @@
+<?php
+session_start();
+
+// Ambil username dari session jika sudah login
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+
+// Fungsi untuk menentukan sapaan berdasarkan waktu
+function getGreeting()
+{
+    $hour = date('H'); // Mendapatkan jam dalam format 24 jam (0-23)
+
+    if ($hour >= 5 && $hour < 12) {
+        return "Selamat Pagi";
+    } else if ($hour >= 12 && $hour < 15) {
+        return "Selamat Siang";
+    } else if ($hour >= 15 && $hour < 18) {
+        return "Selamat Sore";
+    } else {
+        return 'Selamat Malam <i class="fa-solid fa-moon"></i>';
+    }
+}
+
+$greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user sudah login
+?>
+
 <!-- Start Main Top -->
 <div class="main-top">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row my-0">
             <!-- Kolom kiri -->
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
-            <div class="login-box">
+                <div class="login-box">
                     <select id="basic" onchange="navigate()" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                        <option value="../auth/register.php">Register Here</option>
                         <option value="../auth/login.php">Sign In</option>
+                        <option value="../auth/register.php">Register Here</option>
                     </select>
                 </div>
             </div>
@@ -66,6 +91,16 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
+                <!-- Selamat Datang dan sapaan hanya jika sudah login -->
+                <div>
+                    <span style="margin:10px; font-weight: bold;">
+                        <?php
+                        if ($username) {
+                            echo "$greeting, <span style='color: #B0B435;'>$username</span>";
+                        }
+                        ?>
+                    </span>
+                </div>
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
                     <li class="dropdown">
@@ -96,6 +131,15 @@
                             <p></p>
                         </a>
                     </li>
+                    <?php
+                    if ($username) {
+                    echo '<li>
+                        <a href="../auth/logout.php">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                            <p></p>
+                        </a>
+                    </li>';
+                    } ?>
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
