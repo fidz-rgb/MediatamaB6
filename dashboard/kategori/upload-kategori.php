@@ -7,6 +7,10 @@
     <label for="exampleInput" class="form-label">Nama Kategori</label>
     <input type="text" class="form-control" id="exampleInputPassword1" name="nm_kategori">
   </div>
+  <div class="mb-3">
+    <label for="exampleInput" class="form-label">Deskripsi Kategori</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="deskripsi">
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <?php include "../layout/footer.php"; ?>

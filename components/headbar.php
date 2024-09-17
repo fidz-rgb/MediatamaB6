@@ -3,22 +3,26 @@ session_start();
 
 // Ambil username dari session jika sudah login
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+$role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
 
 // Fungsi untuk menentukan sapaan berdasarkan waktu
 function getGreeting()
 {
     $hour = date('H'); // Mendapatkan jam dalam format 24 jam (0-23)
 
-    if ($hour >= 5 && $hour < 12) {
-        return "Selamat Pagi";
+    if ($hour >= 0 && $hour < 6) {
+        return "Selamat Dini Hari";
+    } else if ($hour >= 6 && $hour < 12) {
+        return 'Selamat Pagi <i class="fas fa-coffee"></i>';
     } else if ($hour >= 12 && $hour < 15) {
-        return "Selamat Siang";
+        return 'Selamat Siang <i class="fa-solid fa-sun"></i>';
     } else if ($hour >= 15 && $hour < 18) {
-        return "Selamat Sore";
+        return 'Selamat Sore <i class="fas fa-cloud-sun"></i>';
     } else {
         return 'Selamat Malam <i class="fa-solid fa-moon"></i>';
     }
 }
+
 
 $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user sudah login
 ?>
@@ -31,8 +35,8 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
                 <div class="login-box">
                     <select id="basic" onchange="navigate()" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                        <option value="../auth/login.php">Sign In</option>
-                        <option value="../auth/register.php">Register Here</option>
+                        <option value="../auth/login.php" >Log in</option>
+                        <option value="../auth/register.php" >Register</option>
                     </select>
                 </div>
             </div>
@@ -116,6 +120,10 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
+                    <?php
+                    if ($role === 'admin') {
+                        echo '<li class="nav-item"><a class="nav-link" href="../dashboard/index.php">Dashboard</a></li>';
+                    } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -133,10 +141,9 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
                     </li>
                     <?php
                     if ($username) {
-                    echo '<li>
+                        echo '<li>
                         <a href="../auth/logout.php">
                         <i class="fa-solid fa-right-from-bracket"></i>
-                            <p></p>
                         </a>
                     </li>';
                     } ?>

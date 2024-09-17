@@ -1,3 +1,3 @@
 <script>
-    window.location.href="auth/login.php"
+    window.location.href="home/index.php"
 </script>

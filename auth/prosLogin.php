@@ -19,6 +19,7 @@ if ($cek > 0) {
         $_SESSION['role'] = $data['role'];
 
         if ($data['role'] === "admin") {
+            $_SESSION['islogin'] = true;
             echo "<script>
             alert('Login berhasil sebagai ADMIN');
             window.location.href='../home/index.php';
@@ -26,6 +27,7 @@ if ($cek > 0) {
         } else if ($data['role'] === "alumni") {
             // Cek apakah alumni sudah disetujui oleh admin
             if ($data['is_approved'] == 1) {
+                $_SESSION['islogin'] = true;
                 echo "<script>
                 alert('Login berhasil sebagai ALUMNI');
                 window.location.href='../home/index.php';
@@ -38,6 +40,7 @@ if ($cek > 0) {
                 </script>";
             }
         } else if ($data['role'] === "user") {
+            $_SESSION['islogin'] = true;
             echo "<script>
             alert('Login berhasil sebagai USER');
             window.location.href='../home/index.php';

@@ -2,7 +2,11 @@
 include "../koneksi.php";
 $id_kategori = $_GET ['id_kategori'];
 $nm_kategori = $_POST['nm_kategori'];
-$update = mysqli_query($connect,"UPDATE tb_kategori SET nm_kategori ='$nm_kategori' WHERE id_kategori=$id_kategori");
+$deskripsi = $_POST['deskripsi'];
+$update = mysqli_query($connect,"UPDATE categories SET 
+name ='$nm_kategori',
+description = '$deskripsi' 
+WHERE category_id=$id_kategori");
 if($update){
     echo "<script>
     alert('Data berhasil di Edit')

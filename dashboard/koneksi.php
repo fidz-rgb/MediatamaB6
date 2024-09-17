@@ -1,5 +1,5 @@
 <?php 
-$connect = mysqli_connect("localhost","root","","testauth");
+$connect = mysqli_connect("localhost","root","","dbecomm");
 
 // Check connection
 if (mysqli_connect_errno()){

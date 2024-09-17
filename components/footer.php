@@ -69,17 +69,27 @@
 <script src="../components/js/contact-form-script.js"></script>
 <script src="../components/js/custom.js"></script>
 
-<!-- JS untuk option link -->
+<!-- JS untuk dropdown login -->
 <script>
+    // Fungsi untuk mengganti warna dan mengarahkan ke halaman baru
     function navigate() {
-        var select = document.getElementById("basic");
-        var url = select.options[select.selectedIndex].value;
+        var selectElement = document.getElementById('basic');
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
 
-        if (url) { // Jika opsi yang dipilih memiliki URL
-            window.location.href = url; // Arahkan ke URL
-        }
+        // Mengubah warna latar belakang berdasarkan opsi yang dipilih
+        var selectedColor = selectedOption.getAttribute('data-color');
+        selectElement.style.backgroundColor = selectedColor;
+
+        // Mengarahkan ke halaman sesuai dengan value dari opsi yang dipilih
+        window.location.href = selectedOption.value;
     }
+
+    // Event listener untuk memanggil fungsi `navigate` pada perubahan atau klik ulang
+    document.getElementById('basic').addEventListener('click', function() {
+        navigate(); // Panggil fungsi navigate setiap kali dropdown diklik
+    });
 </script>
+
 <!-- bootstrap JS 5.3 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

@@ -4,7 +4,7 @@ include "../koneksi.php";
 if(isset($_GET['id_kategori']))
 $id_kategori = $_GET['id_kategori'];
 
-$hapus = mysqli_query($connect, "DELETE FROM tb_kategori WHERE id_kategori='$id_kategori' ");
+$hapus = mysqli_query($connect, "DELETE FROM categories WHERE category_id='$id_kategori' ");
 if($hapus){
     echo "<script>
     alert('Data berhasil di Hapus')

@@ -37,6 +37,15 @@
   <!-- material icons google -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <!-- customize for dropdown login -->
+  <style>
+    .login-box select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
