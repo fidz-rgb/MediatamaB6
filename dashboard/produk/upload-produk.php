@@ -13,21 +13,16 @@
   </div>
   <div class="row">
     <div class="col mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Harga</label>
+      <label for="exampleInput" class="form-label">Harga</label>
       <input type="text" class="form-control" id="" name="harga">
     </div>
     <div class="col mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Stok</label>
+      <label for="exampleInput" class="form-label">Stok</label>
       <input type="text" class="form-control" id="" name="stok">
     </div>
   </div>
-  <!-- <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Kategori</label>
-    <input type="text" class="form-control" name="kategori">
-  </div> -->
-
   <div class="mb-3">
-    <label for="" class="form-label">Kategori Berita</label>
+    <label for="" class="form-label">Kategori Produk</label>
     <select name="kategori" id="" class="form-control">
       <option selected disabled value="">Pilih...</option>
       <?php
@@ -35,7 +30,7 @@
       $kategori = mysqli_query($connect, "SELECT * FROM categories ORDER BY category_id DESC");
       while ($item = mysqli_fetch_array($kategori)) {
       ?>
-        <option value="<?= $item['category_id'] ?>"><?= $item['name'] ?></option>
+        <option value="<?= $item['category_id'] ?>"><?= $item['nm_category'] ?></option>
       <?php } ?>
     </select>
   </div>

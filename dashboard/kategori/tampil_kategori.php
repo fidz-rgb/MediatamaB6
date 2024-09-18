@@ -23,8 +23,8 @@
     ?>
       <tr>
         <th scope="row"><?= $no++ ?></th>
-        <td><?= $item['name'] ?></td>
-        <td><?= $item['description'] ?></td>
+        <td><?= $item['nm_category'] ?></td>
+        <td><?= $item['desc_category'] ?></td>
         <td style="text-align: center;">
           <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-primary"><a href="edit_kategori.php?id_kategori=<?= $item['category_id'] ?>" style="text-decoration: none; color:white;">Sunting</a></button>

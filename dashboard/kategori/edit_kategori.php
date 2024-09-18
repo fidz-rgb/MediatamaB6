@@ -10,11 +10,11 @@ $item = mysqli_fetch_array($cari);
     <h2 style="text-align: center;">Edit Kategori</h2>
     <div class="mb-3">
         <label for="exampleInput" class="form-label">Nama Kategori</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" name="nm_kategori" value="<?= $item['name'] ?>">
+        <input type="text" class="form-control" id="exampleInputPassword1" name="nm_kategori" value="<?= $item['nm_category'] ?>">
     </div>
     <div class="mb-3">
         <label for="exampleInput" class="form-label">Deskripsi</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" name="deskripsi" value="<?= $item['description'] ?>">
+        <input type="text" class="form-control" id="exampleInputPassword1" name="deskripsi" value="<?= $item['desc_category'] ?>">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

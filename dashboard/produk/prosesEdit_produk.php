@@ -1,14 +1,14 @@
 <?php
 include "../koneksi.php";
 
-$idproduk = $_POST['id_produk'];
+$idproduk = $_GET['id_produk'];
 $name = $_POST['nm_produk'];
 $deskripsi = $_POST['deskripsi'];
 $harga = $_POST['harga'];
 $stok = $_POST['stok'];
 $kategori = $_POST['kategori'];
-$nmFile = $_FILES['pic']['name'];
-$nmSementara = $_FILES['pic']['tmp_name'];
+$nmFile = $_FILES['image']['name'];
+$nmSementara = $_FILES['image']['tmp_name'];
 
 // logika jika gambar yg di callback di form edit tidak melakukan pengeditan
 $query = mysqli_query($connect, "SELECT * FROM products WHERE product_id='$idproduk'");
@@ -31,12 +31,12 @@ if ($nmFile != "") {
         exit;
     }
 } else {
-    $gambar = $data['pic'];
+    $gambar = $data['image'];
 }
 
 $tambah = mysqli_query($connect, "UPDATE products 
-SET  name ='$name',
-description = '$deskripsi',
+SET  nm_product ='$name',
+desc_product = '$deskripsi',
 price = '$harga',
 stock_quantity = '$stok',
 category_id ='$kategori',

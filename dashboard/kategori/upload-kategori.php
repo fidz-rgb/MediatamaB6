@@ -5,11 +5,11 @@
   <h2 style="text-align: center;">Input Kategori</h2>
   <div class="mb-3">
     <label for="exampleInput" class="form-label">Nama Kategori</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="nm_kategori">
+    <input type="text" class="form-control" name="nm_kategori">
   </div>
   <div class="mb-3">
     <label for="exampleInput" class="form-label">Deskripsi Kategori</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="deskripsi">
+    <input type="text" class="form-control" name="deskripsi">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

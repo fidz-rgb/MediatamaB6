@@ -9,33 +9,38 @@
     <thead class="table-primary" style="text-align: center;">
         <tr>
             <th scope="col">#</th>
-            <th scope="col" >Nama Produk</th>
-            <th scope="col" >Deskripsi</th>
-            <th scope="col" >Harga</th>
-            <th scope="col" >Stok</th>
-            <th scope="col" >ID Kategori</th>
-            <th scope="col" >Gambar</th>
-            <th scope="col" >Aksi</th>
+            <th scope="col">Nama Produk</th>
+            <th scope="col">Deskripsi</th>
+            <th scope="col">Harga</th>
+            <th scope="col">Stok</th>
+            <th scope="col">Kategori Produk</th>
+            <th scope="col">Gambar</th>
+            <th scope="col">Aksi</th>
         </tr>
     </thead>
     <tbody>
         <?php
         include "../koneksi.php";
         $no = 1;
-        $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON 
-        products.product_id=categories.category_id;");
+        $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON products.category_id=categories.category_id");
         while ($item = mysqli_fetch_array($produk)) {
         ?>
             <tr>
                 <th scope="row"><?= $no++ ?></th>
-                <td class="text-break"><?= $item['name'] ?></td>
-                <td class="text-break" style="width:300px; text-align: justify;">
-                    <?= $item['isi_produk'] ?>
+                <td class="text-break"><?= $item['nm_product'] ?></td>
+                <td class="text-break" style="width:500px; text-align: justify;">
+                    <?= $item['desc_product'] ?>
                 </td>
                 <td class="text-break"><?= $item['price'] ?></td>
                 <td class="text-break"><?= $item['stock_quantity'] ?></td>
-                <td class="text-break"><?= $item['category_id'] ?></td>
-                <td> <img src="../assets/img/upload/<?= $item['image']?>" style="width: 250px; height:100px;" alt=""></td>
+                <td class="text-break"><?= $item['nm_category'] ?></td>
+                <td> <img src="../assets/img/upload/<?= $item['image'] ?>" style="width: 200px; height:100px;" alt=""></td>
+                <td style="text-align: center;">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary"><a href="edit_produk.php?id_produk=<?= $item['product_id'] ?>" style="text-decoration: none; color:white;">Sunting</a></button>
+                        <button type="button" class="btn btn-danger"><a href="hapus_produk.php?id_produk=<?= $item['product_id'] ?>" style="text-decoration: none; color:white;">Hapus</a></button>
+                    </div>
+                </td>
             </tr>
         <?php } ?>
     </tbody>

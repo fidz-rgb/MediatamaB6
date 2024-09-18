@@ -4,7 +4,7 @@ include "../koneksi.php";
 $nm_kategori = $_POST['nm_kategori'];
 $deskripsi = $_POST['deskripsi'];
 //ini merujuk langsung sesuai penamaan tabel/field yg dibuat di db
-$tambah = mysqli_query($connect,"INSERT INTO categories(name,description) VALUES ('$nm_kategori','$deskripsi')");
+$tambah = mysqli_query($connect,"INSERT INTO categories(nm_category,desc_category) VALUES ('$nm_kategori','$deskripsi')");
 if($tambah){
     echo "<script>
     alert('Data berhasil ditambahkan')

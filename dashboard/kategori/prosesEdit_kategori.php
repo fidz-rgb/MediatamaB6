@@ -4,8 +4,8 @@ $id_kategori = $_GET ['id_kategori'];
 $nm_kategori = $_POST['nm_kategori'];
 $deskripsi = $_POST['deskripsi'];
 $update = mysqli_query($connect,"UPDATE categories SET 
-name ='$nm_kategori',
-description = '$deskripsi' 
+nm_category ='$nm_kategori',
+desc_category = '$deskripsi' 
 WHERE category_id=$id_kategori");
 if($update){
     echo "<script>
