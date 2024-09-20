@@ -38,22 +38,22 @@ WHERE products.user_id = $userid");
         </tr>
     </thead>
     <tbody>
-    <?php while ($row = $produk->fetch_assoc()) {?>
+    <?php while ($row = $result->fetch_assoc()) {?>
     <tr>
                 <th scope="row"><?= $no++ ?></th>
-                <td><?= $item['username'] ?> </td>
-                <td class="text-break"><?= $item['nm_product'] ?></td>
+                <td><?= $row['username'] ?> </td>
+                <td class="text-break"><?= $row['nm_product'] ?></td>
                 <td class="text-break" style="width:500px; text-align: justify;">
-                    <?= $item['desc_product'] ?>
+                    <?= $row['desc_product'] ?>
                 </td>
-                <td class="text-break"><?= $item['price'] ?></td>
-                <td class="text-break"><?= $item['stock_quantity'] ?></td>
-                <td class="text-break"><?= $item['nm_category'] ?></td>
-                <td> <img src="../assets/img/upload/<?= $item['image'] ?>" style="width: 200px; height:100px;" alt=""></td>
+                <td class="text-break"><?= $row['price'] ?></td>
+                <td class="text-break"><?= $row['stock_quantity'] ?></td>
+                <td class="text-break"><?= $row['nm_category'] ?></td>
+                <td> <img src="../assets/img/upload/<?= $row['image'] ?>" style="width: 200px; height:100px;" alt=""></td>
                 <td style="text-align: center;">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary"><a href="edit_produk.php?id_produk=<?= $item['product_id'] ?>" style="text-decoration: none; color:white;">Sunting</a></button>
-                        <button type="button" class="btn btn-danger"><a href="hapus_produk.php?id_produk=<?= $item['product_id'] ?>" style="text-decoration: none; color:white;">Hapus</a></button>
+                        <button type="button" class="btn btn-primary"><a href="edit_produk.php?id_produk=<?= $row['product_id'] ?>" style="text-decoration: none; color:white;">Sunting</a></button>
+                        <button type="button" class="btn btn-danger"><a href="hapus_produk.php?id_produk=<?= $row['product_id'] ?>" style="text-decoration: none; color:white;">Hapus</a></button>
                     </div>
                 </td>
             </tr>
