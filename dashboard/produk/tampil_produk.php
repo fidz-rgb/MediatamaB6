@@ -1,5 +1,23 @@
-<?php include "../layout/header.php"; ?>
-<table class="table table-bordered  w-75 mx-auto">
+<?php 
+session_start();
+include "../koneksi.php";
+include "../layout/header.php"; 
+
+if(!isset($_SESSION['user_id']) || ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'alumni'))
+{
+    echo"<script>
+                alert('Anda harus login sebagai Admin/Alumni untuk masuk!');
+                window.location.href='../../auth/login.php';
+                </script>";
+}
+$userid = $_SESSION['user_id'];
+
+$result = $connect->query("SELECT products.*, categories.nm_category AS category_id FROM products
+JOIN categories ON products.category_id = categories.category_id
+WHERE products.user_id = $userid");
+?>
+
+<table class="table table-bordered mx-auto" style="width: fit-content;">
     <div class="list-btn d-flex m-3" style="border-bottom: 2px solid grey;">
         <h1>Produk</h1>
         <!-- <div class="ms-auto">
@@ -9,6 +27,7 @@
     <thead class="table-primary" style="text-align: center;">
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Username</th>
             <th scope="col">Nama Produk</th>
             <th scope="col">Deskripsi</th>
             <th scope="col">Harga</th>
@@ -19,14 +38,10 @@
         </tr>
     </thead>
     <tbody>
-        <?php
-        include "../koneksi.php";
-        $no = 1;
-        $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON products.category_id=categories.category_id");
-        while ($item = mysqli_fetch_array($produk)) {
-        ?>
-            <tr>
+    <?php while ($row = $produk->fetch_assoc()) {?>
+    <tr>
                 <th scope="row"><?= $no++ ?></th>
+                <td><?= $item['username'] ?> </td>
                 <td class="text-break"><?= $item['nm_product'] ?></td>
                 <td class="text-break" style="width:500px; text-align: justify;">
                     <?= $item['desc_product'] ?>
@@ -42,7 +57,7 @@
                     </div>
                 </td>
             </tr>
-        <?php } ?>
+        <?php }?>
     </tbody>
 </table>
 <?php include "../layout/footer.php"; ?>

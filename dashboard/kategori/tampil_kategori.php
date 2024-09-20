@@ -1,4 +1,7 @@
-<?php include "../layout/header.php"; ?>
+<?php 
+include "../../auth/util.php";
+include "../layout/header.php"; 
+?>
 <table class="table table-bordered w-50 mx-auto">
   <div class="list-btn d-flex m-3" style="border-bottom: 2px solid grey;">
     <h1>Kategori Produk</h1>

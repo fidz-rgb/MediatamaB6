@@ -1,4 +1,7 @@
-<?php include "../layout/header.php"; ?>
+<?php 
+include "../../auth/util.php";
+include "../layout/header.php"; 
+?>
 
 <?php include "../koneksi.php";
 $id_produk = $_GET['id_produk'];

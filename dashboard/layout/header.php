@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Dashboard</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -34,7 +34,7 @@
     </style>
 </head>
 
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed" >
     <?php
     include "navbar.php";
     include "sidebar.php";

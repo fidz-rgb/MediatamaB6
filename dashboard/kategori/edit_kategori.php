@@ -1,4 +1,7 @@
-<?php include "../layout/header.php"; ?>
+<?php 
+include "../../auth/util.php";
+include "../layout/header.php"; 
+?>
 <?php include "../koneksi.php";
 
 $id_kategori = $_GET['id_kategori'];

@@ -1,5 +1,6 @@
 <?php 
 include "../koneksi.php";
+$username = $_SESSION['username'];
 $name = $_POST['nm_produk'];
 $deskripsi = $_POST['deskripsi'];
 $harga = $_POST['harga'];
@@ -10,8 +11,8 @@ $nmSementara = $_FILES['image']['tmp_name'];
 $trUpload = move_uploaded_file($nmSementara, '../assets/img/upload/' .$nmFile);
 
 $tambah = mysqli_query($connect,"INSERT INTO products
-(nm_product,desc_product,price,stock_quantity,category_id,image) VALUES 
-('$name','$deskripsi','$harga','$stok','$kategori','$nmFile')");
+(user_id,nm_product,desc_product,price,stock_quantity,category_id,image) VALUES 
+('$username','$name','$deskripsi','$harga','$stok','$kategori','$nmFile')");
 if($tambah){
     echo "<script>
     alert('Data berhasil ditambahkan')
