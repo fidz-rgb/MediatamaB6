@@ -3,13 +3,18 @@ session_start();
 include "../koneksi.php";
 include "../layout/header.php";
 
-if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
+if (isset($_SESSION['role']) && ($_SESSION['role'] === 'admin' || $_SESSION['role'] === 'alumni')) {
+    echo "<script>
+                alert('Welcome to product page');
+        </script>";
+} else {
     echo "<script>
     alert('Anda harus login sebagai Admin/Alumni untuk masuk!');
     window.location.href='../../auth/login.php';
     </script>";
 }
-
+$no = 1;
+$result = $connect->query("SELECT * FROM tb_berita JOIN tb_kategori ON tb_berita.id_kategori=tb_kategori.id_kategori;");
 ?>
 
 <table class="table table-bordered mx-auto" style="width: fit-content;">
@@ -22,7 +27,7 @@ if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
     <thead class="table-primary" style="text-align: center;">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">User ID</th>
+            <th scope="col">Username</th>
             <th scope="col">Nama Produk</th>
             <th scope="col">Deskripsi</th>
             <th scope="col">Harga</th>
@@ -33,15 +38,10 @@ if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
         </tr>
     </thead>
     <tbody>
-        <?php
-        $no = 1;
-        
-        $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON products.category_id=categories.category_id");
-        while ($row = mysqli_fetch_array($produk)) {
-        ?>
+        <?php while ($row = $result->fetch_assoc()) { ?>
             <tr>
                 <th scope="row"><?= $no++ ?></th>
-                <td><?= $row['user_id'] ?></td>
+                <td><?= $row['username'] ?> </td>
                 <td class="text-break"><?= $row['nm_product'] ?></td>
                 <td class="text-break" style="width:500px; text-align: justify;">
                     <?= $row['desc_product'] ?>

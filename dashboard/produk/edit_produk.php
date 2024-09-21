@@ -1,9 +1,6 @@
 <?php 
-include "../../auth/util.php";
+include "../koneksi.php";
 include "../layout/header.php"; 
-?>
-
-<?php include "../koneksi.php";
 $id_produk = $_GET['id_produk'];
 $cari = mysqli_query($connect, "SELECT * FROM products WHERE product_id = '$id_produk'");
 $itemproduk = mysqli_fetch_array($cari);

@@ -1,11 +1,28 @@
-<?php 
-include "../../auth/util.php";
-include "../layout/header.php"; 
+<?php
+session_start();
+include "../koneksi.php";
+// include "../../auth/util.php";
+include "../layout/header.php";
+if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
+  echo "<script>
+  alert('Anda harus login sebagai Admin/Alumni untuk masuk!');
+  window.location.href='../../auth/login.php';
+  </script>";
+}
 ?>
 
 <!-- input form -->
-<form action="tambah_produk.php" method="post" enctype="multipart/form-data" class="mx-auto my-5 w-50">
+<form action="tambah_produk.php" method="POST" enctype="multipart/form-data" class="mx-auto my-5 w-50">
   <h2 style="text-align: center;">Input Produk</h2>
+  <div class="mb-3">
+    <?php
+    $user = $_SESSION['username'];
+    $query = mysqli_query($connect, "SELECT * FROM users WHERE username = '$user'");
+    while ($nama = mysqli_fetch_array($query)){
+    ?>
+    <input hidden type="text" class="form-control border border-dark-subtle border-2" id="" name="user_id" value="<?= $nama['user_id'] ?>">
+  <?php }?>
+  </div>
   <div class="mb-3">
     <label for="" class="form-label">Nama Produk</label>
     <input type="text" class="form-control border border-dark-subtle border-2" id="" name="nm_produk">
@@ -29,7 +46,6 @@ include "../layout/header.php";
     <select name="kategori" id="" class="form-control border border-dark-subtle border-2">
       <option selected disabled value="">Pilih...</option>
       <?php
-      include "../koneksi.php";
       $kategori = mysqli_query($connect, "SELECT * FROM categories ORDER BY category_id DESC");
       while ($item = mysqli_fetch_array($kategori)) {
       ?>
