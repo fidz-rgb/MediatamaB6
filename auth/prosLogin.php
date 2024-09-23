@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include "../utility/conn.php";
 
@@ -16,6 +16,7 @@ if ($cek > 0) {
     if (password_verify($pass, $data['pwd'])) {
         // Jika password benar, set session dan arahkan berdasarkan role
         $_SESSION['username'] = $user;
+        $_SESSION['user_id'] = $data['user_id'];
         $_SESSION['role'] = $data['role'];
 
         if ($data['role'] === "admin") {
@@ -65,5 +66,3 @@ if ($cek > 0) {
     window.location.href='login.php';
     </script>";
 }
-?>
-

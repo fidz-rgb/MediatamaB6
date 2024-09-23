@@ -16,8 +16,8 @@
   <meta name="author" content="">
 
   <!-- Site Icons -->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../components/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../components/images/apple-touch-icon.png">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../components/css/bootstrap.min.css">
@@ -43,6 +43,15 @@
       width: 100%;
       padding: 10px;
       border-radius: 5px;
+    }
+
+    .hvr-hover {
+      text-decoration: none !important;
+    }
+
+    .hvr-hover:hover {
+      color: #B0B435 !important;
+      transition: color 0.3s ease !important;
     }
   </style>
 

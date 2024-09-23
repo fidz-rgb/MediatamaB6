@@ -1,4 +1,16 @@
-<?php include "../layout/header.php"; ?>
+<?php
+include "../../auth/util.php";
+session_start();
+include "../koneksi.php";
+include "../layout/header.php";
+
+if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
+    echo "<script>
+    alert('Anda harus login sebagai Admin/Alumni untuk masuk!');
+    window.location.href='../../auth/login.php';
+    </script>";
+}
+?>
 <table class="table table-bordered mx-auto" style="width:950px;">
     <div class="list-btn d-flex m-3" style="border-bottom: 2px solid grey;">
         <h1>Users</h1>
@@ -35,8 +47,9 @@
                 <td class="text-break"><?= $item['email'] ?></td>
                 <td class="" style="width: fit-content;"><?= $item['role'] ?></td>
                 <td class="" style="width: fit-content;">
-                    <?= ($item['role'] == 'admin') ? 'Super User' :
-                        (($item['is_approved'] == 1) ? 'Approved' : 'Pending'); ?>
+                    <?= ($item['role'] == 'admin') ? 'Super User' : 
+                    (($item['role'] == 'user') ? 'User Normal' : 
+                    (($item['is_approved'] == 1) ? 'Approved' : 'Pending')); ?>
                 </td>
 
 

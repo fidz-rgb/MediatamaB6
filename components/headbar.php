@@ -8,10 +8,13 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
 // Fungsi untuk menentukan sapaan berdasarkan waktu
 function getGreeting()
 {
+    // Set timezone ke waktu Indonesia (WIB - UTC+7)
+    date_default_timezone_set('Asia/Jakarta');
+    
     $hour = date('H'); // Mendapatkan jam dalam format 24 jam (0-23)
 
     if ($hour >= 0 && $hour < 6) {
-        return "Selamat Dini Hari";
+        return "Selamat Dini Hari <i class='fa-solid fa-moon'></i>";
     } else if ($hour >= 6 && $hour < 12) {
         return 'Selamat Pagi <i class="fas fa-coffee"></i>';
     } else if ($hour >= 12 && $hour < 15) {
@@ -23,9 +26,9 @@ function getGreeting()
     }
 }
 
-
 $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user sudah login
 ?>
+
 
 <!-- Start Main Top -->
 <div class="main-top">
@@ -35,8 +38,8 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
                 <div class="login-box">
                     <select id="basic" onchange="navigate()" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                        <option value="../auth/login.php" >Log in</option>
-                        <option value="../auth/register.php" >Register</option>
+                        <option value="../auth/login.php">Log in</option>
+                        <option value="../auth/register.php">Register</option>
                     </select>
                 </div>
             </div>
@@ -105,43 +108,61 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
                         ?>
                     </span>
                 </div>
+                
+                <?php
+                $current_page = basename($_SERVER['PHP_SELF']);
+                ?>
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link" data-toggle="dropdown">SHOP</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.php">Sidebar Shop</a></li>
-                            <li><a href="shop-detail.php">Shop Detail</a></li>
-                            <li><a href="cart.php">Cart</a></li>
-                            <li><a href="checkout.php">Checkout</a></li>
-                            <li><a href="my-account.php">My Account</a></li>
-                            <li><a href="wishlist.php">Wishlist</a></li>
-                        </ul>
+                    <li class="nav-item <?= ($current_page == 'index.php') ? 'active' : '' ?>">
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
+                    <li class="nav-item <?= ($current_page == 'shop.php') ? 'active' : '' ?>">
+                        <a class="nav-link" href="shop.php">SHOP</a>
+                    </li>
+                    <li class="nav-item <?= ($current_page == 'about.php') ? 'active' : '' ?>">
+                        <a class="nav-link" href="about.php">About</a>
+                    </li>
+                    <li class="nav-item <?= ($current_page == 'contact-us.php') ? 'active' : '' ?>">
+                        <a class="nav-link" href="contact-us.php">Contact</a>
+                    </li>
+
                     <?php
                     if ($role === 'admin') {
                         echo '<li class="nav-item"><a class="nav-link" href="../dashboard/index.php">Dashboard</a></li>';
-                    } else if ($role === 'alumni'){
+                    } else if ($role === 'alumni') {
                         echo '<li class="nav-item"><a class="nav-link" href="../dashboard/index.php">Dashboard</a></li>';
-                    } 
+                    }
                     ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
-            <div class="attr-nav">
+            <div class="attr-nav ">
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                    <li class="side-menu">
+                    <!-- <li class="side-menu">
                         <a href="#">
                             <i class="fa fa-shopping-bag"></i>
                             <span class="badge"></span>
                             <p></p>
                         </a>
-                    </li>
+                    </li> -->
+                    <?php
+                    if ($role === 'user') {
+                    ?>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">
+                                <i class="fa-solid fa-person"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right py-2">
+                                <li><a class="dropdown-item py-2" href="my-account.php">My Account</a></li>
+                                <li><a class="dropdown-item py-2" href="cart.php">Cart</a></li>
+                                <li><a class="dropdown-item py-2" href="wishlist.php">Wishlist</a></li>
+                                <li><a class="dropdown-item py-2" href="checkout.php">Checkout</a></li>
+                            </ul>
+                        </li>
+                    <?php } ?>
                     <?php
                     if ($username) {
                         echo '<li>
@@ -156,7 +177,7 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
         </div>
 
         <!-- Start Side menu -->
-        <div class="side" id="side-menu">
+        <!-- <div class="side" id="side-menu">
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
             <li class="cart-box">
                 <ul class="cart-list">
@@ -181,7 +202,7 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
                     </li>
                 </ul>
             </li>
-        </div>
+        </div> -->
         <!-- End Side menu -->
     </nav>
     <!-- End Navigation -->

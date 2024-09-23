@@ -1,4 +1,5 @@
 <?php
+include "../../auth/util.php";
 session_start();
 include "../koneksi.php";
 include "../layout/header.php";
@@ -12,7 +13,7 @@ if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
 
 ?>
 
-<table class="table table-bordered mx-auto" style="width: fit-content;">
+<table class="table table-bordered mx-auto" style="width: 950px;">
     <div class="list-btn d-flex m-3" style="border-bottom: 2px solid grey;">
         <h1>Produk</h1>
         <!-- <div class="ms-auto">
@@ -35,13 +36,22 @@ if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
     <tbody>
         <?php
         $no = 1;
-        
-        $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON products.category_id=categories.category_id");
+        $id = $_SESSION['user_id'];
+        $role = $_SESSION['role']; // Mendapatkan role dari session
+
+        // logika program jika admin yg melihat tampil produk semua data terlihat tapi! 
+        // jika alumni yg masuk yg tampil hanya sesuai iduser role alumni
+        if ($role === 'admin') {
+            $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON products.category_id=categories.category_id");
+        } else {
+
+            $produk = mysqli_query($connect, "SELECT * FROM products JOIN categories ON products.category_id=categories.category_id WHERE products.user_id = $id");
+        }
         while ($row = mysqli_fetch_array($produk)) {
         ?>
             <tr>
                 <th scope="row"><?= $no++ ?></th>
-                <td><?= $row['user_id'] ?></td>
+                <td class="w-2"><?= $row['user_id'] ?></td>
                 <td class="text-break"><?= $row['nm_product'] ?></td>
                 <td class="text-break" style="width:500px; text-align: justify;">
                     <?= $row['desc_product'] ?>
@@ -57,7 +67,9 @@ if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
                     </div>
                 </td>
             </tr>
-        <?php } ?>
+        <?php
+        }
+        ?>
     </tbody>
 </table>
 <?php include "../layout/footer.php"; ?>

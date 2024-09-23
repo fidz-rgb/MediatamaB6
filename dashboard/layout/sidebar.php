@@ -28,7 +28,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="../users/approve_user.php">Hak Akses User</a>
                             <a class="nav-link" href="../users/tampil_user.php">Tampil Users</a>
-                            <a class="nav-link" href="../users/upload-user.php">Tambah Users</a>
+                       <!-- <a class="nav-link" href="../users/upload-user.php">Tambah Users</a> -->
                         </nav>
                     </div>';
                     } ?>
@@ -68,7 +68,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
                     <div class="collapse" id="collapseReview" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="../review/tampil_review.php">Tampil Review</a>
-                            <a class="nav-link" href="../review/upload-review.php">Tambah Review</a>
+                            <!-- <a class="nav-link" href="../review/upload-review.php">Tambah Review</a> -->
                         </nav>
                     </div>
                     <!-- end review -->

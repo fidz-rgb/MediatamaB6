@@ -11,8 +11,8 @@ include "../layout/header.php";
     <input type="text" class="form-control border border-dark-subtle border-2" name="nm_kategori">
   </div>
   <div class="mb-3">
-    <label for="exampleInput" class="form-label">Deskripsi Kategori</label>
-    <input type="text" class="form-control border border-dark-subtle border-2" name="deskripsi">
+    <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Kategori</label>
+    <textarea class="form-control border border-dark-subtle border-2" id="exampleFormControlTextarea1" rows="3" name="deskripsi"></textarea>
   </div>
   <button type="submit" class="btn btn-primary" style="background-color:#B0B435; border:none;">Submit</button>
 </form>

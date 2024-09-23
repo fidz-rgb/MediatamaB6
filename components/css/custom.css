@@ -1,1 +1,10 @@
 /** ADD YOUR AWESOME CODES HERE **/
+.sayur-link {
+    color: red !important; /* Warna teks awal */
+    text-decoration: none !important; /* Menghilangkan garis bawah default */
+}
+
+.sayur-link:hover {
+    color: green !important; /* Ubah teks menjadi hijau saat dihover */
+    transition: color 0.3s ease !important; /* Tambahkan animasi transisi untuk perubahan warna */
+}

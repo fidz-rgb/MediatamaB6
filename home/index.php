@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                        <p class="m-b-40">Tempat dimana semua kesegaran berada.</p>
                         <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                        <p class="m-b-40">Semua produksi dipantau dan diolah dengan baik berkat para Ahli botani kami yang berpengalaman.</p>
                         <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                        <p class="m-b-40">Semua proses dilakukan secara alami tanpa ada bahan kimia.</p>
                         <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                     </div>
                 </div>
@@ -49,32 +49,34 @@
 </div>
 <!-- End Slider -->
 
-<!-- Start Categories  -->
-<div class="categories-shop">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="../components/images/categories_img_01.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+ <!-- Start Categories  -->
+ <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="../components/images/category-rempah.jpg" alt="" />
+                        <a class="btn hvr-hover" href="#">Rempah</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="../components/images/categories_img_02.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="../components/images/category-buah.jpg" alt="" />
+                        <a class="btn hvr-hover" href="#">Buah</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="../components/images/categories_img_03.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="../components/images/category-sayur.jpg" alt="" />
+                        <a class="btn hvr-hover" href="#">Sayur</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Categories -->
+    <!-- End Categories -->
+
+
 
 <!-- Start Products  -->
 <div class="products-box">
