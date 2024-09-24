@@ -1,6 +1,7 @@
-<?php include "../layout/header.php"; ?>
-
-<?php include "../koneksi.php";
+<?php 
+session_start();
+include "../layout/header.php";
+include "../koneksi.php";
 $iduser = $_GET['iduser'];
 $cari = mysqli_query($connect, "SELECT * FROM users WHERE user_id = '$iduser'");
 $itemuser = mysqli_fetch_array($cari);

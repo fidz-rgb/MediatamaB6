@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../koneksi.php";
 include "../layout/header.php"; 
 $id_produk = $_GET['id_produk'];

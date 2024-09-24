@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../../auth/util.php";
 include "../layout/header.php"; 
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;

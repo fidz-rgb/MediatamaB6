@@ -1,4 +1,7 @@
-<?php include "../layout/header.php"; ?>
+<?php 
+session_start();
+include "../layout/header.php"; 
+?>
 
 <!-- input form -->
 <form action="tambah_produk.php" method="post" enctype="multipart/form-data" class="mx-auto my-5 w-50">

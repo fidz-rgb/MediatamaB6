@@ -31,10 +31,43 @@
             font-size: 1.25rem;
             color: #666;
         }
+
+        /* pagination di tampil data dashboard */
+        /* Warna teks pagination menjadi putih */
+        .pagination .page-link {
+            color: #B0B435;
+            /* Warna huruf putih */
+            background-color: transparent;
+            /* Latar belakang transparan untuk tombol default */
+            border: 1px solid #B0B435;
+            /* Tambahkan garis batas agar sesuai dengan warna aktif */
+            transition: background-color 0.3s ease;
+            /* Animasi transisi */
+        }
+
+        /* Warna latar belakang untuk tombol halaman aktif */
+        .pagination .active .page-link {
+            background-color: #B0B435;
+            /* Warna latar belakang aktif */
+            color: #FFFFFF;
+            /* Warna teks tetap putih */
+            border-color: #B0B435;
+            /* Warna batas sama dengan background */
+        }
+
+        /* Saat hover di pagination */
+        .pagination .page-link:hover {
+            background-color: #B0B435;
+            /* Background berubah jadi hijau saat dihover */
+            color: #FFFFFF;
+            /* Tetap putih saat dihover */
+        }
+
+        /* end */
     </style>
 </head>
 
-<body class="sb-nav-fixed" >
+<body class="sb-nav-fixed">
     <?php
     include "navbar.php";
     include "sidebar.php";

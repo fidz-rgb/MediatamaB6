@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../../auth/util.php";
 include "../layout/header.php"; 
 ?>

@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control border border-dark-subtle border-2" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" placeholder="Email" name="email" required>
+                <input type="text" class="form-control border border-dark-subtle border-2" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2" placeholder="Email" name="email" required>
                 <span class="input-group-text border border-dark-subtle border-2" id="basic-addon2">@example.com</span>
             </div>
             <div class="row g-3 align-items-center mb-3">

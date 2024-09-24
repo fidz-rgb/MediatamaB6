@@ -86,13 +86,32 @@
                                 </div>
                             </div>
                             <!--end-gridview -->
-                            <!-- listview -->
+
+                            <!-- listview1 -->
                             <div role="tabpanel" class="tab-pane fade" id="list-view">
                                 <div class="list-view-box">
                                     <div class="row">
                                         <?php
                                         include "../utility/conn.php";
-                                        $query = mysqli_query($connect, "SELECT * FROM products");
+
+                                        // Set berapa banyak data yang akan ditampilkan per halaman
+                                        $limit = 10;
+
+                                        // Cek halaman saat ini (default adalah halaman 1)
+                                        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                                        $start = ($page > 1) ? ($page * $limit) - $limit : 0;
+
+                                        // Query untuk menghitung total data
+                                        $result = mysqli_query($connect, "SELECT COUNT(*) AS total FROM products");
+                                        $totalData = mysqli_fetch_assoc($result)['total'];
+
+                                        // Hitung total halaman yang diperlukan
+                                        $totalPages = ceil($totalData / $limit);
+
+                                        // Query untuk mengambil data dengan batasan limit dan start
+                                        $query = mysqli_query($connect, "SELECT * FROM products LIMIT $start, $limit");
+
+                                        // Menampilkan produk
                                         while ($produk = mysqli_fetch_array($query)) {
                                         ?>
                                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -101,14 +120,13 @@
                                                         <div class="type-lb">
                                                             <p class="new">New</p>
                                                         </div>
-                                                        <img src="../dashboard/assets/img/upload/<?= $produk['image'] ?>" alt="<?= $produk['nm_product'] ?>" class="img-fluid">
+                                                        <img src="../dashboard/assets/img/upload/<?= $produk['image'] ?>" alt="<?= $produk['nm_product'] ?>" style="width:370px; height: 350px; object-fit:cover;" class="img-fluid">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                             </ul>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -116,16 +134,44 @@
                                             <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
                                                 <div class="why-text full-width">
                                                     <h4><?= $produk['nm_product'] ?></h4>
-                                                    <h5> <del>Rp 60.00</del>Rp.<?=$produk['price'] ?></h5>
-                                                    <p style="text-align: justify;"><?=$produk['desc_product'] ?></p>
+                                                    <h5> <del>Rp 60.00</del> Rp.<?= $produk['price'] ?></h5>
+                                                    <p style="text-align: justify;"><?= $produk['desc_product'] ?></p>
                                                     <a class="btn hvr-hover" href="#">Add to Cart</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
                                     </div>
+
+                                    <!-- Pagination -->
+                                    <div class="mb-2" style="border-bottom: 2px solid grey;"></div>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-center">
+                                            <?php if ($page > 1): ?>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="?page=<?= $page - 1 ?>" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                            <?php endif; ?>
+
+                                            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                                <li class="page-item <?= ($i == $page) ? 'active' : '' ?>">
+                                                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                                                </li>
+                                            <?php endfor; ?>
+
+                                            <?php if ($page < $totalPages): ?>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="?page=<?= $page + 1 ?>" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            <?php endif; ?>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
-                            <!--end-listview -->
+                            <!-- end-listview1 -->
                         </div>
                     </div>
                 </div>
@@ -144,13 +190,11 @@
                         </div>
                         <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
                             <div class="list-group-collapse sub-men">
-                                <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Fruits & Drinks <small class="text-muted">(100)</small>
+                                <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Fruits<small class="text-muted">(100)</small>
                                 </a>
                                 <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
                                     <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action active">Fruits 1 <small class="text-muted">(50)</small></a>
-                                        <a href="#" class="list-group-item list-group-item-action">Fruits 2 <small class="text-muted">(10)</small></a>
-                                        <a href="#" class="list-group-item list-group-item-action">Fruits 3 <small class="text-muted">(10)</small></a>
+                                        <a href="#" class="list-group-item list-group-item-action">Musim<small class="text-muted">(50)</small></a>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +209,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(22)</small></a>
+                            <a href="#" class="list-group-item list-group-item-action">Spices<small class="text-muted">(22)</small></a>
                         </div>
                     </div>
                     <div class="filter-price-left">

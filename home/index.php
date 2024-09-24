@@ -84,8 +84,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-all text-center">
-                    <h1>Fruits & Vegetables</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    <h1>Fruits,Vegetables & Spices</h1>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p> -->
                 </div>
             </div>
         </div>
@@ -93,6 +93,9 @@
             <div class="col-lg-12">
                 <div class="special-menu text-center">
                     <div class="button-group filter-button-group">
+                        <!-- <button class="active" data-filter="*">All</button>
+                        <button data-filter=".top-featured">Top featured</button>
+                        <button data-filter=".best-seller">Best seller</button> -->
                         <button class="active" data-filter="*">All</button>
                         <button data-filter=".top-featured">Top featured</button>
                         <button data-filter=".best-seller">Best seller</button>
@@ -119,8 +122,8 @@
                         </div>
                     </div>
                     <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
+                        <h4>Wortel</h4>
+                        <h5> Rp.5000</h5>
                     </div>
                 </div>
             </div>
@@ -142,8 +145,8 @@
                         </div>
                     </div>
                     <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $9.79</h5>
+                        <h4>Tomat ceri</h4>
+                        <h5> Rp.10000</h5>
                     </div>
                 </div>
             </div>
@@ -165,8 +168,8 @@
                         </div>
                     </div>
                     <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $10.79</h5>
+                        <h4>Anggur</h4>
+                        <h5> Rp.12000</h5>
                     </div>
                 </div>
             </div>
@@ -188,8 +191,8 @@
                         </div>
                     </div>
                     <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $15.79</h5>
+                        <h4>Pepaya</h4>
+                        <h5> Rp.8000</h5>
                     </div>
                 </div>
             </div>

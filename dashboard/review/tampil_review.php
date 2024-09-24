@@ -19,7 +19,7 @@ if (!isset($_SESSION['islogin']) || $_SESSION['islogin'] !== true) {
         <button type="button" class="btn btn-primary"><a href="upload-produk.php" style=" text-decoration: none; color: white;">Tambah</a></button>
         </div> -->
     </div>
-    <thead class="table-primary" style="text-align: center;">
+    <thead class="table" style="text-align: center; background-color:#B3B575;">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Product ID</th>

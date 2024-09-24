@@ -10,7 +10,7 @@ function getGreeting()
 {
     // Set timezone ke waktu Indonesia (WIB - UTC+7)
     date_default_timezone_set('Asia/Jakarta');
-    
+
     $hour = date('H'); // Mendapatkan jam dalam format 24 jam (0-23)
 
     if ($hour >= 0 && $hour < 6) {
@@ -36,12 +36,21 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
         <div class="row my-0">
             <!-- Kolom kiri -->
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
-                <div class="login-box">
+                <li class="login-box dropdown px-2 py-1 rounded-start" style="text-align:center; width:fit-content; height:max-content; background-color:#B0B435; color:white;">
+                    <a href="#" class="nav-link" data-toggle="dropdown">
+                        <i class="fa-solid fa-door-open"></i>
+                    </a>
+                    <ul class="dropdown-menu py-2">
+                        <li><a class="dropdown-item py-2" href="../auth/login.php">Log in</a></li>
+                        <li><a class="dropdown-item py-2" href="../auth/register.php">Register</a></li>
+                    </ul>
+                </li>
+                <!-- <div class="login-box">
                     <select id="basic" onchange="navigate()" class="selectpicker show-tick form-control" data-placeholder="Sign In">
                         <option value="../auth/login.php">Log in</option>
                         <option value="../auth/register.php">Register</option>
                     </select>
-                </div>
+                </div> -->
             </div>
             <!-- Kolom kanan -->
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-end">
@@ -108,7 +117,7 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
                         ?>
                     </span>
                 </div>
-                
+
                 <?php
                 $current_page = basename($_SERVER['PHP_SELF']);
                 ?>
