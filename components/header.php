@@ -45,14 +45,33 @@
       border-radius: 5px;
     }
 
-    .hvr-hover {
+    .btnkategori {
       text-decoration: none !important;
     }
 
-    .hvr-hover:hover {
+    .btnkategori:hover {
       color: #B0B435 !important;
       transition: color 0.3s ease !important;
     }
+
+    .btnShopdetail{
+      background-color: #B0B435;
+    }
+
+    .btnShopdetail:hover{
+      color: #B0B435 !important;
+      transition: color 0.3s ease !important;
+    }
+
+    .btnreview{
+      background-color: #B0B435;
+    }
+
+    .btnreview:hover{
+      color: #B0B435 !important;
+      transition: color 0.3s ease !important;
+    }
+
 
     /* pagination listview shop */
     /* Warna teks pagination menjadi putih */

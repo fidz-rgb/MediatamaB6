@@ -12,7 +12,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading" style="color: #B0B435;">Input Data</div>
+                    <div class="sb-sidenav-menu-heading" style="color: #B0B435;">Manage Data</div>
 
                     <!-- users -->
                     <?php
@@ -28,7 +28,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="../users/approve_user.php">Hak Akses User</a>
                             <a class="nav-link" href="../users/tampil_user.php">Tampil Users</a>
-                       <!-- <a class="nav-link" href="../users/upload-user.php">Tambah Users</a> -->
+                            <!-- <a class="nav-link" href="../users/upload-user.php">Tambah Users</a> -->
                         </nav>
                     </div>';
                     } ?>
@@ -42,23 +42,32 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
                     <div class="collapse" id="collapseProduk" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="../produk/tampil_produk.php">Tampil Produk</a>
-                            <a class="nav-link" href="../produk/upload-produk.php">Tambah Produk</a>
+                            <?php 
+                             if ($role !== 'admin') {
+                                echo '<a class="nav-link" href="../produk/upload-produk.php">Tambah Produk</a>';
+                             }?>
                         </nav>
                     </div>
                     <!-- end produk -->
                     <!-- kategori -->
-                    <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseKategori" aria-expanded="false" aria-controls="collapseKategori">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Kategori
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseKategori" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="../kategori/tampil_kategori.php">Tampil Kategori</a>
-                            <a class="nav-link" href="../kategori/upload-kategori.php">Tambah Kategori</a>
-                        </nav>
-                    </div>
-                    <!-- end kategori -->
+                    <?php
+                    if ($role !== 'admin') {
+                        echo '
+                        <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseKategori" aria-expanded="false" aria-controls="collapseKategori">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Kategori
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseKategori" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="../kategori/tampil_kategori.php">Tampil Kategori</a>
+                                <a class="nav-link" href="../kategori/upload-kategori.php">Tambah Kategori</a>
+                            </nav>
+                        </div>
+                        <!-- end kategori -->
+                        ';
+                    }
+                    ?>
                     <!-- review -->
                     <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>

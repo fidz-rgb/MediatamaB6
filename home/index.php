@@ -12,7 +12,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
                         <p class="m-b-40">Tempat dimana semua kesegaran berada.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        <p><a class="btn hvr-hover" href="#">Shop</a></p>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
                         <p class="m-b-40">Semua produksi dipantau dan diolah dengan baik berkat para Ahli botani kami yang berpengalaman.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        <p><a class="btn hvr-hover" href="#">Shop</a></p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
                         <p class="m-b-40">Semua proses dilakukan secara alami tanpa ada bahan kimia.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        <p><a class="btn hvr-hover" href="#">Shop</a></p>
                     </div>
                 </div>
             </div>
@@ -49,32 +49,32 @@
 </div>
 <!-- End Slider -->
 
- <!-- Start Categories  -->
- <div class="categories-shop">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../components/images/category-rempah.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Rempah</a>
-                    </div>
+<!-- Start Categories  -->
+<div class="categories-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../components/images/category-rempah.jpg" alt="" />
+                    <a class="btn hvr-hover btnkategori" href="#">Rempah</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../components/images/category-buah.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Buah</a>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../components/images/category-buah.jpg" alt="" />
+                    <a class="btn hvr-hover btnkategori" href="#">Buah</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../components/images/category-sayur.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Sayur</a>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="../components/images/category-sayur.jpg" alt="" />
+                    <a class="btn hvr-hover btnkategori" href="#">Sayur</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Categories -->
+</div>
+<!-- End Categories -->
 
 
 
@@ -208,7 +208,7 @@
             <div class="col-lg-12">
                 <div class="title-all text-center">
                     <h1>latest blog</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    <p>Berita dan Tips & Trik seputar produk pertanian</p>
                 </div>
             </div>
         </div>
@@ -216,12 +216,12 @@
             <div class="col-md-6 col-lg-4 col-xl-4">
                 <div class="blog-box">
                     <div class="blog-img">
-                        <img class="img-fluid" src="../components/images/blog-img.jpg" alt="" />
+                        <img class="img-fluid" src="../components/images/petani eropa.jpg" alt="" />
                     </div>
                     <div class="blog-content">
                         <div class="title-blog">
-                            <h3>Fusce in augue non nisi fringilla</h3>
-                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            <h3>Dukungan keuangan lebih awal untuk petani Eropa</h3>
+                            <p style="text-align: justify;">Komisi Eropa telah mengizinkan negara-negara anggota untuk memberikan pembayaran di muka yang lebih tinggi kepada petani di bawah Kebijakan Pertanian Bersama (CAP) untuk membantu mengatasi masalah likuiditas. Mulai 16 Oktober 2024, petani dapat menerima hingga 70% dari pembayaran langsung mereka di muka, naik dari 50%. Langkah ini diambil untuk membantu petani yang terdampak oleh cuaca ekstrem dan harga input pertanian yang tinggi (Agriculture and rural development).</p>
                         </div>
                         <ul class="option-blog">
                             <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -234,12 +234,12 @@
             <div class="col-md-6 col-lg-4 col-xl-4">
                 <div class="blog-box">
                     <div class="blog-img">
-                        <img class="img-fluid" src="../components/images/blog-img-01.jpg" alt="" />
+                        <img class="img-fluid" src="../components/images/Ai.jpeg" alt="" />
                     </div>
                     <div class="blog-content">
                         <div class="title-blog">
-                            <h3>Fusce in augue non nisi fringilla</h3>
-                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            <h3>Penggunaan AI untuk prediksi hasil jagung di Purdue</h3>
+                            <p style="text-align: justify;">Peneliti dari Purdue University telah mengembangkan jaringan saraf buatan (AI) untuk memprediksi hasil jagung berdasarkan data lingkungan dan genetik yang dikumpulkan dari teknologi pemantauan jarak jauh seperti drone dan satelit. Ini memungkinkan analisis yang lebih efisien dan akurat dalam memilih varietas jagung yang tahan terhadap perubahan iklim (Purdue Ag)</p>
                         </div>
                         <ul class="option-blog">
                             <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -252,12 +252,12 @@
             <div class="col-md-6 col-lg-4 col-xl-4">
                 <div class="blog-box">
                     <div class="blog-img">
-                        <img class="img-fluid" src="../components/images/blog-img-02.jpg" alt="" />
+                        <img class="img-fluid" src="../components/images/petani 1.jpg" alt="" />
                     </div>
                     <div class="blog-content">
                         <div class="title-blog">
-                            <h3>Fusce in augue non nisi fringilla</h3>
-                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                            <h3>Inflasi menekan ketahanan jangka panjang pertanian</h3>
+                            <p style="text-align: justify;">Di Inggris, kenaikan harga input pertanian sebesar lebih dari 30% sejak 2019, ditambah dengan krisis energi dan ketidakpastian kebijakan, mengancam ketahanan jangka panjang sektor pertanian. Inflasi ini berdampak besar pada petani dan konsumen, memaksa pasar untuk terus beradaptasi dengan tantangan ekonomi global (AHDB)</p>
                         </div>
                         <ul class="option-blog">
                             <li><a href="#"><i class="far fa-heart"></i></a></li>

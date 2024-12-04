@@ -23,7 +23,7 @@ if ($cek > 0) {
             $_SESSION['islogin'] = true;
             echo "<script>
             alert('Login berhasil sebagai ADMIN');
-            window.location.href='../home/index.php';
+            window.location.href='../dashboard/home/index.php';
             </script>";
         } else if ($data['role'] === "alumni") {
             // Cek apakah alumni sudah disetujui oleh admin

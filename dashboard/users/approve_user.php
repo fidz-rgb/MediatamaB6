@@ -1,5 +1,6 @@
-<?php include "../layout/header.php"; ?>
-<?php
+<?php 
+session_start();
+include "../layout/header.php";
 include "../koneksi.php";
 $approve = mysqli_query($connect, "SELECT user_id, username FROM users WHERE role = 'alumni' AND is_approved = 0");
 //while ($item = mysqli_fetch_array($approve)) {

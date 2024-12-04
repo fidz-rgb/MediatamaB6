@@ -136,9 +136,7 @@ $greeting = $username ? getGreeting() : ''; // Dapatkan sapaan hanya jika user s
                     </li>
 
                     <?php
-                    if ($role === 'admin') {
-                        echo '<li class="nav-item"><a class="nav-link" href="../dashboard/index.php">Dashboard</a></li>';
-                    } else if ($role === 'alumni') {
+                    if ($role === 'alumni') {
                         echo '<li class="nav-item"><a class="nav-link" href="../dashboard/index.php">Dashboard</a></li>';
                     }
                     ?>
